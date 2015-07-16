@@ -1,0 +1,50 @@
+﻿@model MailingListRegistry.Model.MailingListEntry
+
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+
+        <!-- would have used bootstrap columns for layout and formatting, and added validation-->
+        
+        <h1>SIGN UP FOR MAILING LIST HERE</h1>
+
+        <div>
+            @Html.LabelFor(model => model.FirstName, "First Name")
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => Model.FirstName)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.LastName, "Last Name")
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => Model.LastName)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Email, "Email")
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Email)
+            @Html.ValidationMessageFor(model => Model.Email)
+        </div>
+        <div>
+            <input type="submit" value="SUBMIT" />
+        </div>
+
+    }
+</body>
+</html>
